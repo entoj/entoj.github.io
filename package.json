@@ -1,0 +1,21 @@
+{
+  "name": "entoj.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "exec-chainable": "0.0.3",
+    "gitbook-cli": "^2.3.2",
+    "gulp": "^4.0.0",
+    "gulp-gh-pages": "^0.5.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "gitbook": "gitbook",
+    "postinstall": "gitbook install",
+    "start": "gitbook serve",
+    "build": "gitbook build"
+  },
+  "author": "",
+  "license": "ISC"
+}

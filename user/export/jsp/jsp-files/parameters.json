@@ -1,0 +1,21 @@
+{
+    "export":
+    {
+        "jsp":
+        [
+            {
+                "parameters": 
+                {
+                    "classes": 
+                    {
+                        "value": "custom"
+                    },
+                    "text":
+                    {
+                        "name": "text_renamed"
+                    }
+                }
+            }            
+        ]
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "export":
+    {
+        "jsp":
+        [
+            {
+                "filename": "include"
+            },
+            {
+                "filename": "inline",
+                "settings":
+                {
+                    "a_text":
+                    {
+                        "mode": "inline"
+                    }
+                }
+            }
+        ]
+    }
+}

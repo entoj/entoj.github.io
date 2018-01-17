@@ -1,0 +1,19 @@
+{
+    "plugins": ["theme-api", "include-codeblock", "insert-logo", "custom-js-css", "-sharing"],
+    "pluginsConfig": {
+        "theme-api": {
+            "theme": "dark"
+        },
+        "insert-logo": {
+            "url": "/assets/logo.png"
+        },
+        "custom-js-css": {
+            "css": [
+                "assets/style.css"
+            ],
+            "js": [
+                "assets/script.js"
+            ]            
+        }        
+    }
+}

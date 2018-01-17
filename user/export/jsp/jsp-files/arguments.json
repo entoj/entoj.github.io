@@ -1,0 +1,20 @@
+{
+    "export":
+    {
+        "jsp":
+        [
+            {
+                "settings":
+                {
+                    "a_text":
+                    {
+                        "arguments":
+                        {
+                            "classes": "custom"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

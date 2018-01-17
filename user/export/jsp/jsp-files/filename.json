@@ -1,0 +1,14 @@
+{
+    "export":
+    {
+        "jsp":
+        [
+            {
+                "filename": "custom"
+            },
+            {
+                "filename": "utils/custom"
+            }            
+        ]
+    }
+}

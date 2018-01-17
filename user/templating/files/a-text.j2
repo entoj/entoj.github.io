@@ -1,0 +1,9 @@
+{##
+    @param {String} [text] - The headline text
+    @param {String} [classes] - Any additional classes that will be added to the root element
+#}
+{% macro a_text(text, classes='') %}
+    <p class="a-text {{ classes }}">
+        {{ text }}
+    </p>
+{% endmacro %}

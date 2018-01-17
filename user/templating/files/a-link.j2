@@ -1,8 +1,0 @@
-{##
-    @param {String} [classes] - Any additional classes that will be added to the root element
-#}
-{% macro a_link(classes='') %}
-    <a class="a-link {{ classes }}">
-        {{ caller }}
-    </a>
-{% endmacro %}

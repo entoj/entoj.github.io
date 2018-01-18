@@ -4,14 +4,17 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "exec-chainable": "0.0.3",
     "gitbook-cli": "^2.3.2",
-    "gulp": "^3.9.1",
-    "gulp-gh-pages": "^0.5.4",
-    "gulp-load-plugins": "^1.5.0"
+    "gulp": "^4.0.0",
+    "gulp-gh-pages": "^0.5.4"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "gitbook serve"
+    "gitbook": "gitbook",
+    "postinstall": "gitbook install",
+    "start": "gitbook serve",
+    "build": "gitbook build"
   },
   "author": "",
   "license": "ISC"

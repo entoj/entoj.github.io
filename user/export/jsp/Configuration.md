@@ -1,5 +1,9 @@
 # Configuration {#Configuration}
 
+<!-- toc -->
+
+{% hint style='info' %}this note needs to be highlighted{% endhint %}
+
 ## Global
 
 ```javascript
@@ -14,7 +18,7 @@ configuration.settings.add(
             assetBaseUrl: '/assets/base',
             svgBaseUrl: '/assets/base/icons',
             svgBasePath: '/base/global/assets/icons',
-            imageBaseUrl: '',
+            imageBaseUrl: '/images',
             viewHelperUri: 'http://foo.com/bar',
             viewHelperNamespace: 'bar'
         }
@@ -33,9 +37,6 @@ configuration.build.environments.add(
 	        jsp:
 	        {
                 exportPath: '${cache}/export',
-                entityPathTemplate: '',
-                entityFilenameTemplate: '',
-                entityMacroFilenameTemplate: '',
                 jspBasePath: 'includes',
                 jspBaseUrl: '/includes',
                 assetBaseUrl: '/assets/base',
@@ -56,9 +57,9 @@ configuration.build.environments.add(
 * **Type:** `String`
 * **Global:** Yes
 * **Environment:** Yes
-* **Default:** `${cache}/${configurationName}/export`
+* **Default:** `${cache}/jsp/export`
 
-The base path used to store exported artefacts. Standard directories may be used as variables.
+The base path used to store all exported artefacts. Standard directories may be used as variables.
 
 
 ### jsp.jspBasePath
@@ -78,7 +79,7 @@ The base path used to store exported jsp artefacts. This is relative to [jsp.exp
 * **Environment:** Yes
 * **Default:** `/includes`
 
-The base url used to include jsp artefacts.
+The base url used to include jsp artefacts via jsp:include.
 
 
 ### jsp.imageBaseUrl
@@ -88,7 +89,7 @@ The base url used to include jsp artefacts.
 * **Environment:** Yes
 * **Default:** ``
 
-Used as the base url for rendering |imageUrl filters
+Used as the base url for rendering |imageUrl filters.
 
 
 ### jsp.assetBaseUrl
@@ -98,7 +99,7 @@ Used as the base url for rendering |imageUrl filters
 * **Environment:** Yes
 * **Default:** ``
 
-Used as the base url for rendering |assetUrl filters
+Used as the base url for rendering |assetUrl filters.
 
 
 ### jsp.svgBaseUrl
@@ -108,7 +109,7 @@ Used as the base url for rendering |assetUrl filters
 * **Environment:** Yes
 * **Default:** ``
 
-Used as the base url for rendering |svgUrl filters
+Used as the base url for rendering |svgUrl filters.
 
 
 ### jsp.svgBasePath
@@ -118,7 +119,7 @@ Used as the base url for rendering |svgUrl filters
 * **Environment:** Yes
 * **Default:** ``
 
-Used as the base path for reading svg icons needed to render |svgViewBox filters
+Used as the base path for reading svg icons needed to render |svgViewBox filters.
 
 
 ### jsp.viewHelperUri
@@ -128,7 +129,7 @@ Used as the base path for reading svg icons needed to render |svgViewBox filters
 * **Environment:** Yes
 * **Default:** `https://entoj.io/entoj`
 
-Used as the uri for the main view helper registration
+Used as the uri for the main view helper registration.
 
 
 ### jsp.viewHelperNamespace
@@ -138,4 +139,4 @@ Used as the uri for the main view helper registration
 * **Environment:** Yes
 * **Default:** `entoj`
 
-Used as the namespace for the main view helper registration
+Used as the namespace for the main view helper registration.

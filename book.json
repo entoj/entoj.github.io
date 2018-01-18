@@ -1,8 +1,8 @@
 {
-    "plugins": ["theme-api", "include-codeblock", "insert-logo", "custom-js-css", "-sharing"],
+    "plugins": ["include-codeblock", "insert-logo", "custom-js-css", "simple-page-toc", "hints", "-sharing"],
     "pluginsConfig": {
-        "theme-api": {
-            "theme": "dark"
+        "theme-default": {
+            "showLevel": false
         },
         "insert-logo": {
             "url": "/assets/logo.png"

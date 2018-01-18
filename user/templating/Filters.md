@@ -1,4 +1,4 @@
-# Filter
+# Filters
 
 Filter are used to encapsulate common functionalities and make them transferable to target plattforms via template exports. 
 

@@ -1,5 +1,23 @@
 # Export {#Export}
 
+To export a pattern create a simple json file names entity.json in the pattern folder (e.g. `base/atoms/a-link/entity.json`) and add a export section for jsp.
+
+**Example:**
+```javascript
+{
+	"export":
+	{
+        "jsp":
+        [
+            {
+            }
+        ]
+	}
+}
+```
+
+This will export the main macro of that pattern ()
+
 ```javascript
 // Full featured Example
 {

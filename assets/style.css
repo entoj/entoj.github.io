@@ -1,11 +1,14 @@
 .book > .book-summary > .book-logo {
     text-align: left;
     padding-bottom: 10px;
-    background-color: white;
 }
 
 .book > .book-summary > .book-logo > img {
     width: 30%;
+}
+
+.book > .book-summary > nav {
+    padding-bottom: 40px;
 }
 
 .book > .book-summary > nav > ul > li:last-child {
@@ -16,5 +19,17 @@
     display: none;
 }
 
-.book > .book-body section pre {
+.book > .book-body > .body-inner {
+    padding-bottom: 40px;
+}
+
+.book > .book-body .alert .hints-container p {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.book > .book-body a.glossary-term {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px dashed #BBB;
 }

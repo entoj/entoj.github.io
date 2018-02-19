@@ -2,8 +2,6 @@
 
 <!-- toc -->
 
-{% hint style='info' %}this note needs to be highlighted{% endhint %}
-
 ## Global
 
 ```javascript

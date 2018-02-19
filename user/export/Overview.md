@@ -34,8 +34,7 @@ For each item in `export.<Exporter>[]` a artefact will be exported. You may conf
 }
 ```
 
-When a entity is composed out of other entities you can configure the rendering of those entities per export by adding a `export.<Exporter>[].macros.<Macro Name>` section. This settings are based on macro calls to give you fine grained control.
-
+When a entity is composed out of other entities you can configure the rendering of those composed entities per export by adding a `export.<Exporter>[].macros.<Macro Name>` section. This settings are based on macro calls.
 
 **Example:**
 ```javascript
@@ -67,8 +66,9 @@ When a entity is composed out of other entities you can configure the rendering 
 
 ### Global settings
 
-To configure a entity for all exports you can adda  `export.globals.<Exporter>` section. This settings are used whenever the entity is exported even as part of another entity.
+To configure the default settings of a entity you can add a `export.globals.<Exporter>` section. Those settings are global and therefore used whenever the macro is part of an export.
 
+{% hint style='tip' %}Local settings will override global settings{% endhint %}
 
 **Example:**
 ```javascript
@@ -96,7 +96,7 @@ To configure a entity for all exports you can adda  `export.globals.<Exporter>` 
                     }
                 }                                
             }
-        }
+        },
         "html":
         [
             {

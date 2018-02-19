@@ -17,6 +17,7 @@
 	* [Performance measuring](user/templating/Filters.md)
 * [Exporter](user/export/Overview.md)
 	* [JSP](user/export/jsp/Overview.md)
+		* [Installing](user/export/jsp/Overview.md#FeatureSupport)
 		* [Installing](user/export/jsp/Install.md)
 		* [Configuration](user/export/jsp/Configuration.md)
 		* [Exporting](user/export/jsp/Export.md)

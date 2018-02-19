@@ -1,8 +1,8 @@
 # JSP exporter
 
-A jsp artefact exporter. All configured entities will export their templates as single jsp files. Macro calls are resolved at runtime via jsp:include.
+A jsp artefact exporter. All configured entities will export their templates as single jsp files. Any macro calls are resolved at runtime via jsp:include.
 
-## Feature Support
+## Feature Support {#FeatureSupport}
 
 ### Yield macros
 

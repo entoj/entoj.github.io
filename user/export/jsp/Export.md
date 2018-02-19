@@ -1,5 +1,7 @@
 # Export {#Export}
 
+<!-- toc -->
+
 To export a pattern create a simple json file names entity.json in the pattern folder (e.g. `base/atoms/a-link/entity.json`) and add a export section for jsp.
 
 **Example:**
@@ -69,24 +71,24 @@ This will export the main macro of that pattern ()
 }
 ```
 
-### Configuration Sections
+## Configuration Sections
 
-#### export.settings.jsp
+### export.settings.jsp
 
 Configurations that are used for all configured exports of this entity. This is overideable per specific export
 
-#### export.jsp[]
+### export.jsp[]
 
 Each configuration will export a artefact. For specific options see the section below.
 
-#### export.jsp[].settings
+### export.jsp[].settings
 
 This section is used to override configurations of macro calls in this specific export. See 
 
 
-### Options
+## Options
 
-#### macro
+### macro
 
 * **Type:** `String`
 * **export.settings.jsp:** No
@@ -97,7 +99,7 @@ This section is used to override configurations of macro calls in this specific 
 Defines the macro that will be exported.
 
 
-#### filename
+### filename
 
 * **Type:** `String`
 * **export.settings.jsp:** No
@@ -108,7 +110,7 @@ Defines the macro that will be exported.
 Define the filename of the exported macro. The .jsp extensions is added automatically. When no path is specified the default path (the categroy plural name in lowercase) is prepended.
 
 
-#### mode
+### mode
 
 * **Type:** `Enum[include|inline]`
 * **export.settings.jsp:** Yes
@@ -119,7 +121,7 @@ Define the filename of the exported macro. The .jsp extensions is added automati
 Defines if the macro will be included via jsp:include or inlined at the calling site.
 
 
-#### parameters
+### parameters
 
 * **Type:** `Array`
 * **export.settings.jsp:** Yes
@@ -130,7 +132,7 @@ Defines if the macro will be included via jsp:include or inlined at the calling 
 Allows to specify parameter default values for macros. This only applies to exporting full macros. If you want to change the arguments of a macro call please see #arguments
 
 
-#### arguments
+### arguments
 
 * **Type:** `Array`
 * **export.settings.jsp:** No

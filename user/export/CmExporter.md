@@ -1,8 +1,8 @@
-{% set configName = 'jsp' %}
+{% set configName = 'cm' %}
 
-# JSP exporter
+# CoreMedia exporter
 
-A jsp artefact exporter. All configured entities will export their templates as single jsp files. Any macro calls are resolved at runtime via jsp:include.
+A CoreMedia (CM) jsp artefact exporter that is based on the JSP exporter - it inherits all behaviours for standard jsp files and extends it with CM specific requirements. All configured entities will export their templates as single jsp files. Any macro calls are resolved at runtime via cm:include. 
 
 
 ## Feature Support {#FeatureSupport}
@@ -52,12 +52,12 @@ Filter | Supported | Details
 
 Install the node module
 ```bash
-$ npm install --save entoj-export-jsp
+$ npm install --save entoj-export-cm
 ```
 
 Register the module (in `entoj-configuration.js`)
 ```js
-configuration.register(require('entoj-export-jsp'));
+configuration.register(require('entoj-export-cm'));
 ```
 
 ## Configuration {#Configuration}
@@ -73,7 +73,7 @@ See [module options](#ModuleOptions) for a detailed documentation.
 // Full featured Example
 configuration.settings.add(
     {
-        jsp:
+        cm:
         {
             exportPath: '${cache}/export',
             jspBasePath: 'includes',
@@ -96,7 +96,7 @@ configuration.build.environments.add(
     {
         staging =
         {
-	        jsp:
+	        cm:
 	        {
                 exportPath: '${cache}/export',
                 jspBasePath: 'includes',
@@ -125,7 +125,7 @@ I am assuming you already read the chapter about the basics of [export configura
 	{
         "settings":
         {
-            "jsp":
+            "cm":
             {
                 "mode": "inline",
                 "parameters": 
@@ -138,7 +138,7 @@ I am assuming you already read the chapter about the basics of [export configura
                 }
             }
         },
-        "jsp":
+        "cm":
         [
             {
                 "macro": "name",
@@ -169,6 +169,104 @@ I am assuming you already read the chapter about the basics of [export configura
 }
 ```
 
+#### Filename generation
+
+The artefact filenames are automatically generated from the template `<Namespace>/<Type>.<View>[<ViewVariant>]` where the `[<ViewVariant>]` part is optional. When the type includes a namespace it will be used as the directory name of exported artifact.
+
+##### Type
+
+The type of the entity bean can be configured by the `type` option. 
+
+```javascript
+{
+    "export":
+    {
+        "cm":
+        [
+            {
+                "type": "CMLinkable"
+            }
+        ]
+    }
+}
+```
+
+When not configured the documented type of the model parameter from the nunjucks macro is used:
+
+```jinja
+{##
+    @param {CMTeasable} [model]
+#}
+{% macro e_example(model) %}
+```
+
+When the type can not be determined the exporter will fallback to the JSP exporter.
+
+##### View
+
+The view can be configured by the `view` option:
+
+```javascript
+{
+    "export":
+    {
+        "cm":
+        [
+            {
+                "view": "asModule"
+            }
+        ]
+    }
+}
+```
+
+When not configured the macro name with all `_` replaced by `-` will be used:
+
+```jinja
+{% macro e_example(model) %} => e-example
+```
+
+##### View Variant
+
+The view variant can be configured by the `viewVariant` option:
+
+```
+{
+    "export":
+    {
+        "cm":
+        [
+            {
+                "viewVariant": "article"
+            }
+        ]
+    }
+}
+```
+
+When not configured the view variant part will be completly skipped.
+
+##### Full filename
+
+The filename can be configured by the `viewVariant` option:
+
+```
+{
+    "export":
+    {
+        "cm":
+        [
+            {
+                "filename": "CMLinkable.asLink"
+            }
+        ]
+    }
+}
+```
+
+When a filename is configured all other options are ignored. If the filename is incomplete it will automatically be augmented with a path and/or file extension.
+
+
 #### Options {#ExportOptions}
 
 ##### macro
@@ -181,6 +279,35 @@ I am assuming you already read the chapter about the basics of [export configura
 
 Defines the macro that will be exported.
 
+##### type
+
+* **Type:** `String`
+* **Export:** Yes
+* **Global:** Yes
+* **Macro:** No
+* **Default:** model type from the macro docblock
+
+Define the type of the underlying entity bean - this is used to generate export filenames.
+
+##### view
+
+* **Type:** `String`
+* **Export:** Yes
+* **Global:** Yes
+* **Macro:** No
+* **Default:** the macro name with all `_` replaced by `-`
+
+Defines the view  - this is used to generate export filenames.
+
+##### viewVariant
+
+* **Type:** `String`
+* **Export:** Yes
+* **Global:** Yes
+* **Macro:** No
+* **Default:** ``
+
+Defines the viewVariant  - this is used to generate export filenames.
 
 ##### filename
 
@@ -192,7 +319,6 @@ Defines the macro that will be exported.
 
 Define the filename of the exported macro. The .jsp extensions is added automatically. When no path is specified the default path (the categroy plural name in lowercase) is prepended.
 
-
 ##### mode
 
 * **Type:** `Enum[include|inline]`
@@ -202,7 +328,6 @@ Define the filename of the exported macro. The .jsp extensions is added automati
 * **Default:** `include`
 
 Defines if the macro will be included via jsp:include or inlined at the calling site.
-
 
 ##### parameters
 
@@ -214,7 +339,6 @@ Defines if the macro will be included via jsp:include or inlined at the calling 
 
 Allows to specify parameter default values for macros. This only applies to exporting full macros. If you want to change the arguments of a macro call please see  [arguments](#arguments)
 
-
 ##### arguments {#arguments}
 
 * **Type:** `Array`
@@ -224,78 +348,3 @@ Allows to specify parameter default values for macros. This only applies to expo
 * **Default:** `[]`
 
 Allows to specify arguments that will be used when calling macros.
-
-
-## Cookbook {#Cookbook}
-
-Below you will find a couple of examples to illustrate most of the configuration scenarios you will face in your daily work.
-
-### Templates
-All examples below are based on the following template files:
-
-#### base/atoms/a-text/a-text.j2
-[import, lang="jinja"](jsp-files/a-text.j2)
-
-#### base/molecules/m-imagetext/m-imagetext.j2
-[import, lang="jinja"](jsp-files/m-imagetext.j2)
-
-
-### Default export
-
-#### Configs
-##### base/atoms/a-text/entity.json
-[import](jsp-files/standard.json)
-
-#### Exported
-##### includes/atoms/a-text.jsp
-[import, lang="html"](jsp-files/standard.jsp)
-
-
-### Custom filenames
-
-#### Configs
-##### base/atoms/a-text/entity.json
-[import](jsp-files/filename.json)
-
-#### Exported
-##### includes/atoms/custom.jsp
-[import, lang="html"](jsp-files/standard.jsp)
-
-##### includes/utils/custom.jsp
-[import, lang="html"](jsp-files/standard.jsp)
-
-
-### Changing default values of parameters
-
-#### Configs
-##### base/atoms/a-text/entity.json
-[import](jsp-files/parameters.json)
-
-#### Exported
-##### includes/atoms/a-text.jsp
-[import, lang="html"](jsp-files/parameters.jsp)
-
-
-### Inlining macros {#ExampleInline}
-
-#### Configs
-##### base/molecules/m-imagetext/entity.json
-[import](jsp-files/inline.json)
-
-#### Exported
-##### includes/molecules/include.jsp
-[import, lang="html"](jsp-files/include.jsp)
-
-##### includes/molecules/inline.jsp
-[import, lang="html"](jsp-files/inline.jsp)
-
-
-### Changing argument values of called macros
-
-#### Configs
-##### base/molecules/m-imagetext/entity.json
-[import](jsp-files/arguments.json)
-
-#### Exported
-##### includes/molecules/m-imagetext.jsp
-[import, lang="html"](jsp-files/arguments.jsp)

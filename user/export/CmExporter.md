@@ -248,7 +248,7 @@ When not configured the view variant part will be completly skipped.
 
 ##### Full filename
 
-The filename can be configured by the `viewVariant` option:
+The filename can be configured by the `filename` option:
 
 ```
 {

@@ -324,6 +324,9 @@ All examples below are based on the following template files:
 #### base/atoms/a-text/a-text.j2
 [import, lang="jinja"](jsp-files/a-text.j2)
 
+#### base/molecules/m-imagetext/m-imagetext.j2
+[import, lang="jinja"](jsp-files/m-imagetext.j2)
+
 
 ### Default export
 
@@ -350,10 +353,10 @@ All examples below are based on the following template files:
 [import, lang="html"](jsp-files/standard.jsp)
 
 
-### Changing default values of parameters or renaming them
+### Changing default values of parameters
 
 #### Configs
-##### base/atoms/a-text/parameters.json
+##### base/atoms/a-text/entity.json
 [import](jsp-files/parameters.json)
 
 #### Exported
@@ -364,23 +367,23 @@ All examples below are based on the following template files:
 ### Inlining macros {#ExampleInline}
 
 #### Configs
-##### base/atoms/a-text/inline.json
+##### base/molecules/m-imagetext/entity.json
 [import](jsp-files/inline.json)
 
 #### Exported
-##### includes/modules/include.jsp
+##### includes/molecules/include.jsp
 [import, lang="html"](jsp-files/include.jsp)
 
-##### includes/modules/inline.jsp
+##### includes/molecules/inline.jsp
 [import, lang="html"](jsp-files/inline.jsp)
 
 
 ### Changing argument values of called macros
 
 #### Configs
-##### base/atoms/a-text/arguments.json
+##### base/molecules/m-imagetext/entity.json
 [import](jsp-files/arguments.json)
 
 #### Exported
-##### includes/atoms/a-text.jsp
+##### includes/molecules/m-imagetext.jsp
 [import, lang="html"](jsp-files/arguments.jsp)

@@ -1,0 +1,13 @@
+{##
+    @param {String} [image] - The image url
+    @param {String} [label] - The text
+    @param {String} [classes] - Any additional classes that will be added to the root element
+#}
+{% macro m_imagetext(image='', label='', classes='') %}
+
+    <div class="m-imagetext {{ classes }}">
+        <img src="{{ image }}" class="m-imagetext__image"/>
+        {{ a_text(label=label, classes='m-imagetext__image') }}
+    </div>
+
+{% endmacro %}

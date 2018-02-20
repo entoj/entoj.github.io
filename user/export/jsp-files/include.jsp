@@ -3,21 +3,21 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="entoj" uri="https://entoj.io/entoj"%>
 
-<!-- macro m_teaser parameters -->
+<!-- macro m_imagetext parameters -->
+<c:set var="image" value="${ not empty param.image ? param.image : '' }" />
+<c:set var="label" value="${ not empty param.label ? param.label : '' }" />
 <c:set var="classes" value="${ not empty param.classes ? param.classes : '' }" />
-<c:set var="text" value="${ not empty param.text ? param.text : '' }" />
 
-<!-- /macro m_teaser parameters -->
+<!-- /macro m_imagetext parameters -->
 
-<!-- macro m_teaser body -->
+<!-- macro m_imagetext body -->
 
-<c:set var="moduleClass" value="${ 'm-modal' }" />
-
-<div class="${ moduleClass } ${ classes }">
+<div class="m-imagetext ${ classes }">
+    <img src="${ image }" class="m-imagetext__image" />
     <jsp:include page="/includes/atoms/a-text.jsp">
-        <jsp:param name="text" value="${ text }" />
-        <jsp:param name="classes" value="${ moduleClass.concat('__text') }" />
+        <jsp:param name="label" value="${ label }" />
+        <jsp:param name="classes" value="${ 'm-imagetext__image' }" />
     </jsp:include>
 </div>
 
-<!-- /macro m_teaser body -->
+<!-- /macro m_imagetext body -->

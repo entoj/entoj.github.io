@@ -100,7 +100,7 @@ For each item in `export.<Exporter>[]` a artefact will be exported. You may conf
 
 #### Global
 
-To configure the default settings of a entity you can add a `export.globals.<Exporter>` section. Those settings are global and therefore used whenever the macro is part of an export.
+To configure the default settings of a entity you can add a `export.settings.<Exporter>` section. Those settings are global and therefore used whenever the macro is part of an export.
 
 {% hint style='tip' %}Local settings will override global settings{% endhint %}
 
@@ -110,7 +110,7 @@ To configure the default settings of a entity you can add a `export.globals.<Exp
 {
 	"export":
 	{
-        "globals":
+        "settings":
         {
             "html":
             {
@@ -136,7 +136,7 @@ To configure the default settings of a entity you can add a `export.globals.<Exp
 
 #### Macro
 
-When a entity is composed out of other entities you can configure the rendering of those composed entities per export by adding a `export.<Exporter>[].macros.<Macro Name>` section for a local override. If you need to make the override global you can add a `export.globals.<Exporter>.macros.<Macro Name>` section.
+When a entity is composed out of other entities you can configure the rendering of those composed entities per export by adding a `export.<Exporter>[].settings.<Macro Name>` section for a local override. If you need to make the override global you can add a `export.globals.<Exporter>.settings.<Macro Name>` section.
 
 **Example:**
 ```javascript
@@ -150,7 +150,7 @@ When a entity is composed out of other entities you can configure the rendering 
         {
             "html":
             {
-                "macros":
+                "settings":
                 {
                     "a_cta": 
                     {
@@ -166,7 +166,7 @@ When a entity is composed out of other entities you can configure the rendering 
         [
             {
                 "filename": "example.html",
-                "macros":
+                "settings":
                 {
                     "a_link": 
                     {

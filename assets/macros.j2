@@ -1,0 +1,32 @@
+{##
+    Render a yes/no image
+#}
+{% macro yesno(value) %}{% if value %}Yes{% else %}No{% endif %}{% endmacro %}
+
+
+{##
+    Render a configuration option
+#}
+{% macro config_option(name, type='String', global=false, environment=false, default='void') %}
+#### {{ name }}
+<table class="config-option">
+    <tr><td class="config-option-key">Type</td><td class="config-option-value"><code>{{ type }}</code></td></tr>
+    <tr><td class="config-option-key">Global</td><td class="config-option-value">{{ yesno(global) }}</td></tr>
+    <tr><td class="config-option-key">Environment</td><td class="config-option-value">{{ yesno(environment) }}</td></tr>
+    <tr><td class="config-option-key">Default</td><td class="config-option-value"><code>{{ default }}</code></td></tr>
+</table>
+{{ caller() }}
+
+{% endmacro %}
+
+{% macro config_option_(name, type='String', global=false, environment=false, default='void') %}
+#### {{ name }}
+
+* **Type:** `{{ type }}`
+* **Global:** {{ yesno(global) }}
+* **Environment:** {{ yesno(environment) }}
+* **Default:** `{{ default }}`
+
+{{ caller() }}
+
+{% endmacro %}

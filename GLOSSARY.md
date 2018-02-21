@@ -17,7 +17,7 @@ Build from templates and patterns
 Build from templates and patterns
 
 ## template
-The frame of a page with sections fro content
+The frame of a page with sections for content
 
 ## templates
-The frame of a page with sections fro content
+The frame of a page with sections for content

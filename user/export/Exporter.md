@@ -1,8 +1,8 @@
-# Artefact exporter {#Export}
+# Artifact exporter {#Export}
 
 One of the main goals of entoj is to make the transfer of design systems to content management systems as easy as possible. Ideally this should work fully automated.
 
-This is where the artefact exporters come into play: they take the templates you write for all the patterns, pages and templates and transform them into something the target plattform understands. Currently there are exporters for HTML, WordPress (PHP), TWIG, Typo3 (Fluid) and CoreMedia (JSP).
+This is where the artifact exporters come into play: they take the templates you write for all the patterns, pages and templates and transform them into something the target platform understands. Currently there are exporters for HTML, WordPress (PHP), TWIG, Typo3 (Fluid) and CoreMedia (JSP).
 
 **Example:**
 ```jinja
@@ -25,12 +25,30 @@ could be exported as HTML
     </blockquote>
 ```
 
+## Export Types {#ExportTypes}
+
+There are different content types you may want to export from your pattern lab. Not all exporters support all of these. For example, if the target platform has no concept of reusable page templates (like the HTML exporter) they will not be exported.
+
+### Patterns
+
+When exporting patterns you are essentially exporting nunjucks macros. Per default, the main macro (which should be named like the pattern itself) will get exported. If you wish to export any other macro you will have to specify its name in the export configuration. 
+
+### Pages
+
+Exporting pages is very useful for static platforms. The exports are not configurable.
+
+### Templates
+
+If the target platform has a meaning of templates with content placeholders (like the CM exporter) the exporting of templates is supported. This will help trmendeously
+
 
 ## Configuration
 
+The configuration of exporters is divided into module and export configuration. The module configuration provides settings for the exporter itself - mostly for directories and filter presets. Export configurations customize the way entities are exported
+
 ### Module Configuration {#ModuleConfiguration}
 
-Exporters may be configured globally and environment specific.
+Exporters may be configured globally and environment specific. Environment configurations will override global configurations.
 
 #### Global
 
@@ -69,11 +87,11 @@ configuration.build.environments.add(
 
 ### Export Configuration {#ExportConfiguration}
 
-To export a entity you need to create a entity.json file in the root directory of a entity (e.g. `base/atoms/a-link/entity.json`) and add a export section. Within that section you can configure each exporter seperatly. For the examples below we will use the html exporter. 
+To export a entity you need to create a entity.json file in the root directory of a entity (e.g. `base/atoms/a-link/entity.json`) and add a export section. Within that section you can configure each exporter separately. For the examples below we will use the html exporter. 
 
 #### Export
 
-For each item in `export.<Exporter>[]` a artefact will be exported. You may configure each export with exporter specific options.
+For each item in `export.<Exporter>[]` a artifact will be exported. You may configure each export with exporter specific options.
 
 {% hint style='tip' %}Use global settings to minify repetition of configs{% endhint %}
 

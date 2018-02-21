@@ -2,7 +2,7 @@
 
 # JSP exporter
 
-A jsp artefact exporter. All configured entities will export their templates as single jsp files. Any macro calls are resolved at runtime via jsp:include.
+A jsp artifact exporter. All configured entities will export their templates as single jsp files. Any macro calls are resolved at runtime via jsp:include.
 
 
 ## Feature Support {#FeatureSupport}
@@ -190,7 +190,7 @@ Defines the macro that will be exported.
 * **Macro:** No
 * **Default:** `${includePath}/${categoryName}/${macroName}.jsp` or `${includePath}/${categoryName}/${entityId}.jsp`
 
-Define the filename of the exported macro. The .jsp extensions is added automatically. When no path is specified the default path (the categroy plural name in lowercase) is prepended.
+Define the filename of the exported macro. The .jsp extensions is added automatically. When no path is specified the default path (the category plural name in lowercase) is prepended.
 
 
 ##### mode

@@ -14,7 +14,8 @@
     "gitbook": "gitbook",
     "postinstall": "gitbook install",
     "start": "gitbook serve",
-    "build": "gitbook build"
+    "build": "gitbook build",
+    "publish": "gulp publish"
   },
   "author": "",
   "license": "ISC"

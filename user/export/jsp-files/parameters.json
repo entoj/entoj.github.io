@@ -1,0 +1,14 @@
+{
+    "export":
+    {
+        "jsp":
+        [
+            {
+                "parameters": 
+                {
+                    "classes": "custom"
+                }
+            }            
+        ]
+    }
+}

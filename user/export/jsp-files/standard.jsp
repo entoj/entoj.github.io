@@ -4,18 +4,15 @@
 <%@ taglib prefix="entoj" uri="https://entoj.io/entoj"%>
 
 <!-- macro a_text parameters -->
-<c:set
-    var="classes"
-    value="${ not empty param.classes ? param.classes : 'custom' }" />
+<c:set var="label" value="${ not empty param.label ? param.label : '' }" />
+<c:set var="classes" value="${ not empty param.classes ? param.classes : '' }" />
 
 <!-- /macro a_text parameters -->
 
 <!-- macro a_text body -->
 
-<c:set var="moduleClass" value="${ 'a-text' }" />
-
-<p class="${ moduleClass } ${ classes }">
-    ${ text }
-</p>
+<div class="a-text ${ classes }">
+    ${ label }
+</div>
 
 <!-- /macro a_text body -->

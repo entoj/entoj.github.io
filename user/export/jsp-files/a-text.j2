@@ -1,0 +1,11 @@
+{##
+    @param {String} [label] - The text
+    @param {String} [classes] - Any additional classes that will be added to the root element
+#}
+{% macro a_text(label='', classes='') %}
+
+    <div class="a-text {{ classes }}">
+        {{ label }}
+    </div>
+
+{% endmacro %}

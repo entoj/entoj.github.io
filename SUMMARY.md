@@ -30,4 +30,3 @@
 		* [Install](user/export/CmExporter.md#Install)
 		* [Module Configuration](user/export/CmExporter.md#ModuleConfiguration)
 		* [Export Configuration](user/export/CmExporter.md#ExportConfiguration)
-		* [Cookbook](user/export/CmExporter.md#Cookbook)		

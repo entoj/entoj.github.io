@@ -31,7 +31,7 @@ The base path used to store exported jsp artefacts. This is relative to [jsp.exp
 The base url used to include jsp artefacts via jsp:include.
 
 
-##### {{ configName }}.imageBaseUrl
+##### {{ configName }}.imageBaseUrl {#{{ configName }}.imageBaseUrl}
 
 * **Type:** `String`
 * **Global:** Yes
@@ -41,7 +41,7 @@ The base url used to include jsp artefacts via jsp:include.
 Used as the base url for rendering |imageUrl filters.
 
 
-##### {{ configName }}.assetBaseUrl
+##### {{ configName }}.assetBaseUrl {#{{ configName }}.assetBaseUrl}
 
 * **Type:** `String`
 * **Global:** Yes
@@ -51,7 +51,7 @@ Used as the base url for rendering |imageUrl filters.
 Used as the base url for rendering |assetUrl filters.
 
 
-##### {{ configName }}.svgBaseUrl
+##### {{ configName }}.svgBaseUrl {#{{ configName }}.svgBaseUrl}
 
 * **Type:** `String`
 * **Global:** Yes
@@ -61,7 +61,7 @@ Used as the base url for rendering |assetUrl filters.
 Used as the base url for rendering |svgUrl filters.
 
 
-##### {{ configName }}.svgBasePath
+##### {{ configName }}.svgBasePath {#{{ configName }}.svgBasePath}
 
 * **Type:** `String`
 * **Global:** Yes
@@ -71,7 +71,7 @@ Used as the base url for rendering |svgUrl filters.
 Used as the base path for reading svg icons needed to render |svgViewBox filters.
 
 
-##### {{ configName }}.viewHelperUri
+##### {{ configName }}.viewHelperUri {#{{ configName }}.viewHelperUri}
 
 * **Type:** `String`
 * **Global:** Yes
@@ -81,7 +81,7 @@ Used as the base path for reading svg icons needed to render |svgViewBox filters
 Used as the uri for the main view helper registration.
 
 
-##### {{ configName }}.viewHelperNamespace
+##### {{ configName }}.viewHelperNamespace {#{{ configName }}.viewHelperNamespace}
 
 * **Type:** `String`
 * **Global:** Yes

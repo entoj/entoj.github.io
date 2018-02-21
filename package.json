@@ -6,6 +6,11 @@
   "dependencies": {
     "exec-chainable": "0.0.3",
     "gitbook-cli": "^2.3.2",
+    "gitbook-plugin-custom-js-css": "0.0.1",
+    "gitbook-plugin-hints": "^1.0.2",
+    "gitbook-plugin-include-codeblock": "^3.2.1",
+    "gitbook-plugin-insert-logo": "^0.1.4",
+    "gitbook-plugin-simple-page-toc": "^0.1.2",
     "gulp": "^4.0.0",
     "gulp-gh-pages": "^0.5.4"
   },

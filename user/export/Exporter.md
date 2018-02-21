@@ -29,17 +29,17 @@ could be exported as HTML
 
 There are different content types you may want to export from your pattern lab. Not all exporters support all of these. For example, if the target platform has no concept of reusable page templates (like the HTML exporter) they will not be exported.
 
-### Patterns
+### Patterns {#ExportTypePatterns}
 
 When exporting patterns you are essentially exporting nunjucks macros. Per default, the main macro (which should be named like the pattern itself) will get exported. If you wish to export any other macro you will have to specify its name in the export configuration. 
 
-### Pages
+### Pages {#ExportTypePages}
 
 Exporting pages is very useful for static platforms. The exports are not configurable.
 
-### Templates
+### Templates {#ExportTypeTemplates}
 
-If the target platform has a meaning of templates with content placeholders (like the CM exporter) the exporting of templates is supported. This will help trmendeously
+If the target platform has a meaning of templates with content placeholders (like the CM exporter) the exporting of templates is supported. This will help tremendously supporting a complete form pattern lab to your target platform.
 
 
 ## Configuration
